@@ -1,0 +1,1260 @@
+:root {
+  --txt-color-red: #fe4848;
+  --txt-color-gray: #535353;
+  --bg-color-blue: #143cdb;
+}
+
+#header {
+  height: 4.5rem;
+  width: 100%;
+  transition: height 0.3s;
+  position: fixed;
+  z-index: 1000;
+  /* 	backdrop-filter: blur(6px); */
+  transition: opacity 0.5s;
+}
+
+#header.active {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#header.on {
+  height: 18rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.header-wrap {
+  height: 4.5rem;
+}
+.header-wrap.on {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.header-con {
+  height: 100%;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-box {
+  height: 100%;
+}
+
+.logo-box > a {
+  display: block;
+  height: 100%;
+}
+
+.logo-box > a > img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  padding: 0.6rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-box {
+  display: flex;
+}
+
+.nav-box > li {
+  width: 170px;
+  padding: 25px 0px;
+  /* 	margin: 0px 50px; */
+  text-align: center;
+  position: relative;
+}
+
+.nav-box > li:last-child > a {
+  color: var(--bg-color-blue) !important;
+  font-weight: bold;
+}
+
+.nav-box > li > a {
+  font-weight: bold;
+  color: white;
+}
+
+.nav-box > li > a.on {
+  color: black;
+}
+
+.nav-box:hover .nav-dept2 {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-dept2 {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  height: 13.5rem;
+  width: 100%;
+  top: 100%;
+  padding-top: 0.5rem;
+  color: var(--txt-color-gray);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s;
+  font-size: 0.9rem;
+}
+
+.nav-dept2 > ul > li {
+  margin-top: 0.3rem;
+}
+
+.nav-dept2 > ul > li > a:hover {
+  color: #000;
+}
+
+/* side */
+html.header-side-box-actived,
+html.header-side-box-actived > body {
+  overflow: hidden;
+}
+
+.header-side-box {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-side-box > div {
+  padding: 0 10px;
+}
+
+.header-side-box i {
+  font-size: 17px;
+  font-family: "FontAwesome";
+}
+
+.header-sidemenu-bar > .side-bar,
+.header-sidemenu-bar > .side-close {
+  display: none;
+  cursor: pointer;
+}
+
+.header-sidemenu-bar > .side-bar.on {
+  display: none;
+}
+
+.header-sidemenu-bar > .side-close.on {
+  display: block;
+  font-size: 1.3rem;
+}
+
+/* sidemenu 시작*/
+.header-sidemenu {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s;
+}
+
+.header-sidemenu.on {
+  opacity: 1;
+  visibility: visible;
+}
+
+.header-sidemenu-con {
+  height: 100%;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.header-sidemenu-content {
+  margin-top: 5rem;
+  height: 40%;
+  width: 50%;
+}
+
+.side-content > li {
+  margin-top: 2rem;
+}
+
+.side-content > li > a {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.side-content > li > a:last-child {
+  color: var(--bg-color-blue);
+}
+
+.side-content > li > ul > li > a {
+  font-size: 1.1rem;
+}
+.side-content > li > ul > li > a:hover {
+  text-decoration: underline;
+}
+
+.header-sidemenu-content ul > li > a::after {
+  float: right;
+  font-family: "FontAwesome";
+  font-size: 1rem;
+}
+
+.header-sidemenu-content > ul > li > a:not(:only-child)::after {
+  content: "\f078";
+}
+
+.header-sidemenu-content > ul > li.active > a::after {
+  content: "\f077";
+}
+
+.header-sidemenu-content > ul > li.active > a:last-child::after {
+  content: "";
+}
+
+.header-sidemenu-img {
+  height: 40%;
+  width: 100%;
+  background: url("../images/sideimg.jpg") no-repeat 50% 50% / cover;
+  z-index: -1;
+}
+/* 메인베너 섹션 시작 */
+#mainbanner {
+  height: 100vh;
+}
+.banner-swiper {
+  height: 100%;
+}
+.main-banner-01,
+.main-banner-02 {
+  position: relative;
+}
+
+.main-banner-01::after,
+.main-banner-02::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.main-banner-01 {
+  background: url("https://ifh.cc/g/1z0kJN.jpg") no-repeat 50% 50% / cover;
+  height: 100%;
+  display: flex;
+}
+
+.banner-text-box {
+  position: absolute;
+  height: 100%;
+  top: 55%;
+  left: 10%;
+  font-family: "Bebas Neue", sans-serif;
+  white-space: nowrap;
+  z-index: 100;
+  color: white;
+}
+
+.banner-text-box-02 {
+  color: white;
+}
+
+.banner-text-box h2 {
+  font-size: 8rem;
+  font-weight: 600;
+  line-height: 5.5rem;
+}
+.banner-text-box p {
+  font-size: 2rem;
+}
+
+.main-banner-02 {
+  background: url("https://ifh.cc/g/NzX9lw.jpg") no-repeat 50% 50% / cover;
+}
+
+/* leagueshop 섹션 시작 */
+#leagueshop {
+  padding-top: 4rem;
+  height: 100vh;
+}
+
+.leagueshop-con {
+  height: 100%;
+  width: 80%;
+}
+
+.leagueshop-box {
+  height: 100%;
+}
+
+.leagueshop-banner {
+  height: 17%;
+  background: url("https://ifh.cc/g/Q3hnYx.jpg") no-repeat 30% 50% / cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 	background:url('https://ifh.cc/g/khgawL.jpg') no-repeat 50% 15% /cover; */
+}
+
+.leagueshop-banner > span {
+  /* 	font-weight: bold; */
+  font-size: 6rem;
+  white-space: nowrap;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 600;
+
+  background: linear-gradient(
+    to right,
+    #fff,
+    #00315f,
+    #007cf0,
+    #007cf0,
+    #00315f,
+    #fff
+  );
+  color: transparent;
+  background-clip: text;
+  background-size: 200% auto;
+  animation: textgradient 15s linear infinite;
+}
+
+@keyframes textgradient {
+  0% {
+    background-position: 200% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.leagueshop-main {
+  height: 83%;
+}
+
+.leagueshop-main-title {
+  text-align: center;
+  padding: 1rem 0 1rem 0;
+  font-weight: bold;
+}
+
+.leagueshop-main-tap {
+  height: 15%;
+}
+
+.leagueshop-main-tap-box {
+  height: 100%;
+  display: flex;
+  padding: 0 10rem;
+}
+
+.leagueshop-main-tap-box > li {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.leagueshop-main-tap-box > li:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.leagueshop-main-tap-box > li.on {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.league-img {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.league-img img {
+  display: block;
+  height: 85%;
+  object-fit: cover;
+}
+
+.league-name {
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.leagueshop-main-view-btn {
+  text-align: end;
+  text-decoration: underline;
+  padding-top: 2rem;
+  font-size: 14px;
+}
+
+/* LEAGUE SHOP 리그샵 아이템 swiper 영역 */
+.leagueshop-main-items {
+  height: 60%;
+  display: flex;
+  align-items: center;
+}
+
+.shop-swiper.active {
+  display: none;
+}
+
+.shop-swiper {
+  height: 80%;
+}
+
+.shop-slide {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shop-item-box {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.shop-item-img {
+  height: 75%;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shop-item-img > a {
+  height: 100%;
+  display: block;
+}
+
+.shop-item-img img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  /* 	padding:1rem; */
+  /* 	object-fit:cover; */
+}
+
+/* LEAGUE SHOP 리그샵 아이템 내부 텍스트 */
+.shop-item-text {
+  height: 25%;
+}
+
+.shop-item-text > ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0.6rem;
+}
+
+.shop-item-text > ul > li {
+  height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.8rem;
+}
+
+.shop-item-text > ul > .item-category {
+  font-weight: bold;
+}
+
+.shop-item-text > ul > .item-prd > span:first-child {
+  color: var(--txt-color-red);
+  font-weight: bold;
+}
+
+.shop-item-text > ul > .item-prd > span:nth-child(2) {
+  text-decoration: line-through;
+  color: var(--txt-color-gray);
+}
+
+.item-prd-bm > span {
+  color: var(--txt-color-gray) !important;
+}
+
+.shop-swiper-btn-prev,
+.shop-swiper-btn-next {
+  background-color: white;
+  border-radius: 50%;
+  height: 40px !important;
+  width: 40px !important;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.4);
+}
+
+.shop-swiper-btn-prev::after,
+.shop-swiper-btn-next::after {
+  display: none;
+}
+
+.shop-swiper-btn-prev::before,
+.shop-swiper-btn-next::before {
+  content: "\f104";
+  font-family: "FontAwesome";
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 15px;
+}
+.shop-swiper-btn-next::before {
+  content: "\f105";
+}
+
+/* 커스텀 */
+#kits {
+  height: 100vh;
+  background: url("https://ifh.cc/g/ztg7sY.jpg") no-repeat 50% 50% / cover;
+}
+
+.kits-con {
+  height: 100%;
+  width: 80%;
+}
+
+.kits-box {
+  display: flex;
+  height: 100%;
+}
+
+.kits-left {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+}
+
+.kits-left-text {
+  font-weight: bold;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.kits-left-text p:nth-child(1) {
+  font-size: 2rem;
+  line-height: 0rem;
+}
+
+.kits-left-text h2 {
+  font-size: 4rem;
+}
+
+.kits-left-text p:nth-child(3) {
+  color: var(--txt-color-gray);
+}
+
+.kits-left-btn {
+  margin: 30px 5rem;
+}
+.kits-btn {
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  background: #202020;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 0 25px;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.kits-btn:hover {
+  color: var(--txt-color-red);
+}
+
+.kits-btn > span::after {
+  content: "\f061";
+  font-family: "FontAwesome";
+  font-size: 0.8rem;
+}
+
+.kits-right {
+  width: 70%;
+}
+
+.kits-right-box {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.kits-right-box .swiper {
+  height: 65%;
+}
+
+.kits-right-box .swiper-slide {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5), 0 6px 6px rgba(0, 0, 0, 0.5);
+}
+
+.kits-right-box .swiper-slide > a {
+  display: block;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.kits-right-box .swiper-slide > a:hover::before {
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.5s;
+}
+
+.kits-right-box .swiper-slide > a:hover > p {
+  opacity: 1;
+  transition: opacity 0.6s;
+}
+
+.kits-right-box .swiper-slide > a:hover > p:last-child {
+  color: var(--txt-color-red);
+}
+
+.kits-right-box .swiper-slide > a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 100%;
+  width: 100%;
+}
+
+.kits-right-box .swiper-slide > a > img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kit-title {
+  color: var(--txt-color-red);
+  border: 1px solid red;
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 0 1rem;
+}
+
+.kit-logo {
+  position: absolute;
+  top: 2%;
+  left: 75%;
+  font-weight: bold;
+  height: 70px;
+  width: 70px;
+}
+
+.kit-p {
+  position: absolute;
+  color: white;
+  padding: 0 1rem;
+  opacity: 0;
+}
+
+.kit-p-01 {
+  font-weight: bold;
+  top: 65%;
+  left: 2%;
+}
+
+.kit-p-02 {
+  top: 85%;
+  left: 2%;
+  font-size: 0.9rem;
+}
+
+.kit-p-02::after {
+  content: "\f061";
+  font-family: "FontAwesome";
+  font-size: 0.8rem;
+  margin-left: 0.8rem;
+}
+
+/* bestteam 섹션 */
+#best-team {
+  height: 100vh;
+  background: url("../images/section-intro-background.jpg") no-repeat 50% 50% /
+    cover;
+}
+
+.best-con {
+  height: 100%;
+  width: 80%;
+}
+
+.best-box {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.best-title {
+  padding: 2rem 0;
+}
+.best-title h2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.best-team-box {
+  height: 80%;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.best-team {
+  height: 100%;
+  width: 100%;
+}
+
+.best-team-img {
+  height: 55%;
+}
+
+.best-team-img01 {
+  background: url("../images/mctbestteambanner.jpg") no-repeat 10% 50% / cover;
+}
+
+.best-team-img02 {
+  background: url("../images/realbestteambanner.jpeg") no-repeat 80% 50% / cover;
+}
+
+.best-team-img03 {
+  background: url("../images/munbestteambanner.jpg") no-repeat 100% 50% / cover;
+}
+
+.best-team-img04 {
+  background: url("../images/paribestteambanner.png") no-repeat 40% 50% / cover;
+}
+
+/* 내부 박스 팀별 타이틀 이미지, 텍스트 */
+.best-team-item-box {
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  background-color: #fff;
+  height: 45%;
+}
+
+.best-team-title {
+  display: flex;
+  height: 20%;
+  width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background 0.5s;
+}
+
+.best-team-title-mct:hover {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    260deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(214, 214, 245, 1) 48%,
+    rgba(94, 227, 254, 1) 100%
+  );
+}
+
+.best-team-title-real:hover {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    260deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(102, 136, 255, 1) 0%,
+    rgba(255, 224, 85, 1) 100%
+  );
+}
+
+.best-team-title-bm:hover {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    260deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+.best-team-title-pari:hover {
+  background: rgb(0, 0, 128);
+  background: linear-gradient(
+    260deg,
+    rgba(0, 0, 128, 1) 0%,
+    rgba(0, 0, 139, 1) 49%,
+    rgba(135, 0, 0, 1) 100%
+  );
+}
+
+.best-team-title > div {
+  display: flex;
+  align-items: center;
+}
+
+.best-team-title img {
+  display: block;
+  height: 70%;
+  object-fit: cover;
+}
+
+.best-team-item-box h2 {
+  font-weight: bold;
+  position: relative;
+  align-self: center;
+}
+
+.best-team-item-box h2::after {
+  content: "\f061";
+  font-family: "FontAwesome";
+  font-size: 0.8rem;
+  margin-left: 1rem;
+}
+
+.best-team-items {
+  height: 80%;
+}
+.best-team-items-box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1rem;
+  gap: 0.3rem;
+}
+
+.best-team-items-box > li {
+  height: 100%;
+  display: flex;
+  cursor: pointer;
+}
+
+/* 내부 아이템 영역 왼쪽 이미지 박스 */
+.best-team-items-left {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 30%;
+  overflow: hidden;
+}
+.best-team-items-left img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  padding: 0.5rem;
+}
+
+/* 내부 아이템 영역 오른쪽 텍스트박스 */
+.best-team-items-right {
+  width: 70%;
+  display: flex;
+}
+
+.best-team-items-right > ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0.6rem;
+}
+
+.best-team-items-right > ul > li {
+  height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.8rem;
+}
+
+.best-team-items-right > ul > .item-category {
+  font-weight: bold;
+}
+
+.best-team-items-right > ul > .item-prd > span:first-child {
+  color: var(--txt-color-red);
+  font-weight: bold;
+}
+
+.best-team-items-right > ul > .item-prd > span:nth-child(2) {
+  text-decoration: line-through;
+  color: var(--txt-color-gray);
+}
+
+.item-prd-bm > span {
+  color: var(--txt-color-gray) !important;
+}
+
+/* 비디오섹션 시작 */
+#euro2024 {
+  height: 60vh;
+  background-color: var(--bg-color-blue);
+}
+.euro-con {
+  height: 100%;
+  width: 80%;
+}
+
+.euro-box {
+  display: flex;
+  height: 100%;
+}
+.euro-box > .euro-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.euro-left {
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.euro-btn-box {
+  margin-top: 1rem;
+}
+
+.euro-btn {
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  background: #202020;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 0 25px;
+  font-size: 0.8rem;
+  transition: color 0.3s;
+  white-space: nowrap;
+}
+
+.euro-btn:hover {
+  color: var(--txt-color-gray);
+}
+
+.euro-btn > span::after {
+  content: "\f061";
+  font-family: "FontAwesome";
+  font-size: 0.7rem;
+}
+
+.video-box {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.video-box > iframe {
+  display: block;
+  height: 85%;
+  width: 100%;
+}
+
+/* 배너 */
+.banner {
+  margin: 5rem 0 3rem 0;
+  height: 60vh;
+}
+
+.banner-con {
+  height: 100%;
+  width: 80%;
+  display: flex;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+.banner-collection,
+.banner-euro2024 {
+  width: 100%;
+}
+
+.banner-img-box {
+  height: 75%;
+}
+
+.banner-collection-img {
+  background: url("../images/collectionpari.jpg") no-repeat 50% 50% / cover;
+}
+.banner-euro204-img {
+  background: url("../images/eurobanner.jpg") no-repeat 50% 50% / cover;
+}
+
+.banner-btn-box {
+  display: flex;
+  height: 25%;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-btn {
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  background: #202020;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 0 25px;
+  font-size: 0.8rem;
+  transition: color 0.3s;
+  white-space: nowrap;
+}
+
+.banner-btn:hover {
+  color: var(--txt-color-gray);
+}
+
+.banner-btn > span::after {
+  content: "\f061";
+  font-family: "FontAwesome";
+  font-size: 0.7rem;
+}
+
+.banner-collection-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-collection-img > h2 {
+  font-weight: bold;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3rem;
+  color: white;
+}
+
+/* 푸터 시작 */
+footer {
+  background-color: #191919;
+}
+
+.footer-con {
+  height: 35vh;
+  width: 90%;
+  padding: 20px 0;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  height: 25%;
+  padding-bottom: 1rem;
+}
+
+.footer-logo > img {
+  display: block;
+  height: 100%;
+}
+
+.footer-contact {
+  color: #aaa;
+  font-size: 16px;
+  display: flex;
+}
+
+.footer-contact-01 {
+  padding: 20px 0;
+}
+
+.footer-contact-01 > p:first-child {
+  color: #fff;
+}
+
+.footer-contact-02 {
+  padding-bottom: 20px;
+}
+.footer-contact p {
+  margin-right: 30px;
+}
+
+.footer-copyright {
+  color: #aaa;
+  font-size: 14px;
+}
+
+/* 반응형 미디어 쿼리 시작 */
+@media (width <= 1388px) {
+  .leagueshop-banner > span {
+    font-size: 5rem;
+  }
+  .best-team-box {
+    flex-direction: column;
+  }
+  .best-team-img {
+    height: 100%;
+  }
+  .best-team-item-box {
+    display: none;
+  }
+  .best-team-img01 {
+    background: url("../images/mctbestteambanner.jpg") no-repeat 10% 20% / cover;
+  }
+  .best-team-img02 {
+    background: url("../images/realbestteambanner.jpeg") no-repeat 80% 30% /
+      cover;
+  }
+  .best-team-img03 {
+    background: url("../images/munbestteambanner.jpg") no-repeat 100% 10% /
+      cover;
+  }
+}
+@media (width <= 1270px) {
+  .kits-left-text h2 {
+    font-size: 3.2rem;
+  }
+  .kits-left-text p:nth-child(1) {
+    font-size: 1.5rem;
+  }
+  .kits-left-text p:nth-child(3) {
+    font-size: 14px;
+  }
+}
+@media (width <= 1200px) {
+  /* 	헤더  */
+  .nav,
+  .header-mypage,
+  .header-mybag {
+    display: none;
+  }
+  .header-sidemenu-bar > .side-bar {
+    display: block;
+  }
+  .header-smenu i {
+    font-size: 1.3rem;
+  }
+
+  /* 메인 배너 타이틀	 */
+  .banner-text-box h2 {
+    font-size: 6rem;
+  }
+  .banner-text-box p {
+    font-size: 1.5rem;
+  }
+  /* leagueshop	 */
+  .leagueshop-main-tap-box {
+    padding: 0;
+  }
+  .shop-item-text > ul > li {
+    font-size: 0.65rem;
+  }
+  .leagueshop-main-tap-box > li > p {
+    display: none;
+  }
+
+  /* leagueshop */
+  .leagueshop-banner > span {
+    font-size: 4rem;
+  }
+  .leagueshop-main-view-btn {
+    font-size: 12px;
+  }
+  .leagueshop-main-items {
+    height: 50%;
+  }
+}
+
+@media (width <= 1000px) {
+  .banner-text-box h2 {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+  .banner-text-box p {
+    font-size: 1rem;
+  }
+
+  .kits-box {
+    flex-direction: column;
+    align-items: center;
+  }
+  .kits-left {
+    align-items: center;
+    text-align: center;
+    height: 20%;
+    width: 100%;
+  }
+  .kits-left-text h2 {
+    font-size: 3rem;
+  }
+  .kits-left-text p:nth-child(3) {
+    display: none;
+  }
+  .kits-left-btn {
+    display: none;
+  }
+  .kits-right {
+    height: 70%;
+    width: 80%;
+    padding-bottom: 3rem;
+  }
+  .kits-right-box {
+    height: 100%;
+  }
+  .kits-right-box .swiper {
+    height: 100%;
+  }
+}
+
+@media (width <= 877px) {
+  .shop-item-img {
+    display: flex;
+    justify-content: center;
+  }
+  .euro-right {
+    display: none;
+  }
+  .footer-contact {
+    flex-direction: column;
+  }
+  .footer-contact {
+    font-size: 13px;
+  }
+  .footer-copyright {
+    font-size: 12px;
+  }
+}
+
+@media (width <= 768px) {
+  .leagueshop-banner > span {
+    font-size: 2rem;
+  }
+  .leagueshop-main-items {
+    height: 70%;
+  }
+}
+
+@media (width <= 480px) {
+  .leagueshop-banner > span {
+    font-size: 1.5rem;
+  }
+  .leagueshop-main-view-btn {
+    padding-top: 1rem;
+  }
+  .kits-con {
+    width: 100%;
+  }
+
+  .banner-con {
+    flex-direction: column;
+  }
+  .banner-collection,
+  .banner-euro2024 {
+    height: 100%;
+  }
+}

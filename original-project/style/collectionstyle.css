@@ -1,0 +1,278 @@
+/* 라이브러리 */
+:root {
+  --txt-color-red: #fe4848;
+  --txt-color-gray: #535353;
+  --bg-color-blue: #143cdb;
+}
+
+#header {
+  height: 4.5rem;
+  width: 100%;
+  transition: height 0.3s;
+  position: fixed;
+  z-index: 1000;
+  background-color: white;
+  transition: opacity 0.5s;
+}
+
+#header.active {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#header.on {
+  height: 18rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.header-wrap {
+  height: 4.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.header-wrap.on {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.header-con {
+  height: 100%;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-box {
+  height: 100%;
+}
+
+.logo-box > a {
+  display: block;
+  height: 100%;
+}
+
+.logo-box > a > img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  padding: 0.6rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-box {
+  display: flex;
+}
+
+.nav-box > li {
+  width: 170px;
+  padding: 25px 0px;
+  /* 	margin: 0px 50px; */
+  text-align: center;
+  position: relative;
+}
+
+.nav-box > li:last-child > a {
+  color: var(--bg-color-blue) !important;
+  font-weight: bold;
+}
+
+.nav-box > li > a {
+  font-weight: bold;
+  color: #000;
+}
+
+.nav-box > li > a.on {
+  color: black;
+}
+
+.nav-box:hover .nav-dept2 {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-dept2 {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  height: 13.5rem;
+  width: 100%;
+  top: 100%;
+  padding-top: 0.5rem;
+  color: var(--txt-color-gray);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s;
+  font-size: 0.9rem;
+}
+
+.nav-dept2 > ul > li {
+  margin-top: 0.3rem;
+}
+
+.nav-dept2 > ul > li > a:hover {
+  color: #000;
+}
+
+/* side */
+.header-side-box {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-side-box > div {
+  padding: 0 10px;
+}
+
+.header-side-box i {
+  font-size: 17px;
+  font-family: "FontAwesome";
+}
+
+.header-sidemenu-bar > .side-bar,
+.header-sidemenu-bar > .side-close {
+  display: none;
+  cursor: pointer;
+}
+
+.header-sidemenu-bar > .side-bar.on {
+  display: none;
+}
+
+.header-sidemenu-bar > .side-close.on {
+  display: block;
+  font-size: 1.3rem;
+}
+
+/* collection 시작 */
+.collection-title {
+  padding-top: 4.5rem;
+}
+
+/* title banner */
+.col-title-banner {
+  height: 660px;
+  width: 100%;
+  background: url("../images/parileekangin.jpg") no-repeat 50% 50% / cover;
+  position: relative;
+}
+
+.col-title-box {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.col-title-box > h2 {
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  font-size: 5rem;
+  font-family: "Bebas Neue", sans-serif;
+  white-space: nowrap;
+  line-height: 5rem;
+}
+
+.collection-grid {
+  margin-top: 5rem;
+}
+
+.collection-grid-con {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.col-gird-box {
+  display: grid;
+  grid-template-areas: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  height: 100%;
+  overflow: hidden;
+  grid-row-gap: 3rem;
+  grid-column-gap: 0.7rem;
+}
+
+.col-grid-item-box {
+  height: 540px;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-item-img {
+  height: 90%;
+  overflow: hidden;
+}
+
+.grid-item-img > a > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.grid-item-txt {
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-item-txt > a > span {
+  font-weight: bold;
+  font-size: 17px;
+}
+
+@media (width <= 1200px) {
+  .nav,
+  .header-mypage,
+  .header-mybag {
+    display: none;
+  }
+  .header-sidemenu-bar > .side-bar {
+    display: block;
+  }
+  .header-smenu i {
+    font-size: 1.3rem;
+  }
+}
+
+@media (width <= 1000px) {
+  .col-grid-item-box {
+    height: 430px;
+  }
+  .grid-item-txt > a > span {
+    font-size: 12px;
+  }
+}
+
+@media (width <= 769px) {
+  .col-title-box > h2 {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+  .col-gird-box {
+    grid-template-areas: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width <= 534px) {
+  .col-title-box > h2 {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+}
+@media (width <= 440px) {
+  .col-gird-box {
+    grid-template-areas: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .grid-item-txt > a > span {
+    font-size: 14px;
+  }
+}
